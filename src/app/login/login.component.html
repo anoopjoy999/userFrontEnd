@@ -1,0 +1,44 @@
+
+<div class="login">
+  <!--<div>
+    <label for="user-name">User name: </label>
+    <input id="user-name"  placeholder="User name"/>
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input id="password"  placeholder="Password"/>
+  </div>
+  <nav>
+    <a class="button" routerLink="/home" routerLinkActive="activebutton">Login</a> |
+    <a class="button" routerLink="/register" routerLinkActive="activebutton">New user/Register</a>
+  </nav>-->
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" (ngSubmit)="login()" #userForm="ngForm">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" [(ngModel)]="useri.id" name="id" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" [(ngModel)]="useri.password"type="password" name="password" required>
+          </mat-form-field></td>
+        </tr></table>
+      
+      <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+    
+    <mat-card-actions>
+      <button type="submit" mat-raised-button  color="primary">Login</button>
+      <button type="button" mat-raised-button routerLink="/register" color="primary">Register</button>
+    </mat-card-actions>
+  </form>
+  </mat-card-content>
+  </mat-card>
+</div>

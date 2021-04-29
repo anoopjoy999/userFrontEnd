@@ -1,0 +1,19 @@
+
+
+.register {  
+    width: auto;  
+    text-align: center;  
+    padding: 15px;  
+    /* border: 3px solid red;   */
+    } 
+
+    .my-form{
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+       
+      .full-width {
+        width: 100%;
+      }
+
