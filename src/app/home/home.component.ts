@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUser(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     console.log("id from home="+id);
     this.userService.getUser(id)
       .subscribe(user => this.user = user);

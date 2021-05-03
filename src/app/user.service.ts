@@ -10,8 +10,8 @@ import { MessageService } from './message.service';
 @Injectable({ providedIn: 'root' })
 export class UserService {
 
-  private usersUrl = '/api/user';  // URL to web api
-  private loginUrl = '/api/login';  // URL to web api
+  private usersUrl = 'http://localhost:4000/user';  // URL to web api
+  private loginUrl = 'http://localhost:4000/login';  // URL to web api
   
 
   httpOptions = {
@@ -47,7 +47,7 @@ export class UserService {
   }
 
   /** GET user by id. Will 404 if id not found */
-  getUser(id: number): Observable<User> {
+  getUser(id: string): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
     console.log("httpoptions"+this.httpOptions);
     return this.http.get<User>(url,this.httpOptions).pipe(
@@ -91,7 +91,7 @@ export class UserService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteUser(id: number): Observable<User> {
+  deleteUser(id: string): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
 
     return this.http.delete<User>(url, this.httpOptions).pipe(
